@@ -9,4 +9,6 @@ Character created by Kōhei Horikoshi.
 2. Open index.html with your browser
 3. Play the game
 
-### Press ***"Space"*** to Jump!
+
+![shigaraki](img/shigaraki-148-172.png) Tip: Press ***"Space"*** to Jump :)
+
