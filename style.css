@@ -1,0 +1,67 @@
+.game{
+    width:600px;
+    height:200px;
+    border: 2px solid white;
+    margin: auto;
+}
+
+#bg {
+    width: 100%;
+    height: 200px;
+    top: 0px;
+ 
+    background-image: url(img/bg.png);
+    background-repeat: repeat-x;
+
+    animation: animatedBackground 4s linear infinite;
+}
+
+@keyframes animatedBackground {
+    from {background-position: 0px 0;}
+    to {background-position: -1200px 0;}
+}
+
+#dino{
+    width: 40px;
+    height: 50px;
+    left: 40px;
+    background-image: url(img/shigaraki-148-172.png);
+    background-size: 40px 50px;
+
+    position: relative;
+    top: 130px;
+    transform-origin: bottom;
+
+}
+
+.jump {
+    animation: jump 0.5s linear;
+}
+@keyframes jump {
+    0%   { top: 130px; }
+    30%  { top: 40px; }
+    50%  { top: 20px; }
+    100% { top: 130px; }
+}
+
+#cactus {
+    width: 20px;
+    height: 35px;
+    position: relative;
+    top: 95px;
+    left: 580px;
+ 
+    background-image: url(img/cactus-1-50-100.png);
+    background-size: 20px 35px;
+    
+    animation: block 2s infinite linear;
+}
+
+@keyframes block{
+    0% {
+        left: 580px;
+    }
+    100% {
+        left: 0px;
+    }
+}
