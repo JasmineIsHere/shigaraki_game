@@ -13,6 +13,9 @@
     background-image: url(img/bg.png);
     background-repeat: repeat-x;
 
+}
+
+.startBg{
     animation: animatedBackground 4s linear infinite;
 }
 
@@ -21,11 +24,11 @@
     to {background-position: -1200px 0;}
 }
 
-#dino{
+#shigaraki{
     width: 40px;
     height: 50px;
     left: 40px;
-    background-image: url(img/shigaraki-148-172.png);
+    background-image: url(img/shigaraki.gif);
     background-size: 40px 50px;
 
     position: relative;
