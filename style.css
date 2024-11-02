@@ -1,38 +1,69 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
 .game{
-    width:600px;
-    height:200px;
+    width:700px;
+    height:300px;
     border: 2px solid white;
     margin: auto;
 }
 
+#text{
+    color: white;
+    font-size: 30px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    padding-top: 20px;
+
+    animation: blink 1s infinite;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 0; }
+  50% { opacity: 1; }
+}
+
 #bg {
-    width: 100%;
-    height: 200px;
+    width: 700px;
+    height: 100%;
     top: 0px;
  
     background-image: url(img/bg.png);
+    background-size: 100% 300px;
     background-repeat: repeat-x;
-
 }
 
 .startBg{
-    animation: animatedBackground 4s linear infinite;
+    animation: animatedBackground 10s linear infinite;
+}
+
+.paused {
+    animation-play-state: paused;
 }
 
 @keyframes animatedBackground {
     from {background-position: 0px 0;}
-    to {background-position: -1200px 0;}
+    to {background-position: -2802px 0;}
+}
+
+#playState {
+    display: none;
 }
 
 #shigaraki{
     width: 40px;
-    height: 50px;
+    height: 60px;
     left: 40px;
     background-image: url(img/shigaraki.gif);
-    background-size: 40px 50px;
+    background-size: 40px 60px;
 
     position: relative;
-    top: 130px;
+    top: 190px;
     transform-origin: bottom;
 
 }
@@ -40,6 +71,7 @@
 .jump {
     animation: jump 0.5s linear;
 }
+
 @keyframes jump {
     0%   { top: 130px; }
     30%  { top: 40px; }
@@ -47,22 +79,21 @@
     100% { top: 130px; }
 }
 
-#cactus {
+#obstacle {
     width: 20px;
     height: 35px;
     position: relative;
-    top: 95px;
-    left: 580px;
- 
+    top: 150px;
+    left: 700px;
+    
     background-image: url(img/cactus-1-50-100.png);
     background-size: 20px 35px;
-    
-    animation: block 2s infinite linear;
+    animation: block 2.4s infinite linear;
 }
 
 @keyframes block{
     0% {
-        left: 580px;
+        left: 680px;
     }
     100% {
         left: 0px;
