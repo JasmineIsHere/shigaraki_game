@@ -20,6 +20,11 @@ body {
   background-color: white;
 }
 
+#music {
+    cursor: pointer;
+    position: fixed;
+}
+
 /* TEXT */
 #text {
   color: #8a0909;
@@ -77,9 +82,17 @@ body {
   display: none;
 }
 
+#score {
+    display: flex;
+    width: 100%;
+    justify-content: right;
+    color: #8a0909;
+}
+
 #readyState {
   /* hide everything in readystate at the start */
   display: none;
+  width: 700px;
   position: absolute;
 }
 

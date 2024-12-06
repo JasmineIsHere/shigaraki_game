@@ -6,16 +6,13 @@ const play = document.getElementById("playState");
 const ready = document.getElementById("readyState");
 const text = document.getElementById("text");
 const scoreDisplay = document.getElementById("score");
+const music = document.getElementById("music");
 
 let score = 0;
 let isAlive; // variable to store interval ID
 
-// trigger jump() when user presses any key
-// document.addEventListener("keydown", function (event) {
-//   jump();
-// });
-
 // trigger playState() when user clicks on the enter button
+// TODO: add functionality for mobile (touch event)
 document.addEventListener("keypress", function (event) {
   if (event.key === "Enter") {
     if (!isAlive) {
@@ -64,7 +61,9 @@ function playState() {
     const shigarakiRect = shigaraki.getBoundingClientRect();
     // get current shigaraki Y position
     const shigarakiLeft = shigarakiRect.left - readyStateRect.left;
-    const shigarakiBottom = Math.abs(shigarakiRect.bottom - readyStateRect.bottom);
+    const shigarakiBottom = Math.abs(
+      shigarakiRect.bottom - readyStateRect.bottom
+    );
 
     let shigarakiWidth = parseInt(
       window.getComputedStyle(shigaraki).getPropertyValue("width")
@@ -90,7 +89,10 @@ function playState() {
       score++;
       scoreDisplay.innerHTML = `Score: ${score}`;
       obstaclePassed = true;
-    } else if (obstacleLeft > shigarakiLeft + shigarakiWidth && obstaclePassed) {
+    } else if (
+      obstacleLeft > shigarakiLeft + shigarakiWidth &&
+      obstaclePassed
+    ) {
       // obstacle is off screen
       obstaclePassed = false;
     }
@@ -117,6 +119,23 @@ function jump() {
     }, 500);
   }
 }
+
+// music control
+const bgMusic = new Audio("/img/mha_bgm.mp3");
+bgMusic.loop = true;
+bgMusic.volume = 0.3;
+music.addEventListener("click", function () {
+  console.log(music.classList);
+  if (music.classList == "playSound") {
+    music.classList.replace("playSound", "muteSound");
+    music.src = "/img/volume_off.svg";
+    bgMusic.pause();
+  } else {
+    music.classList.replace("muteSound", "playSound");
+    music.src = "/img/volume_on.svg";
+    bgMusic.play();
+  }
+});
 
 function obstacleRandomizer() {
   // TODO: randomize obstacle image
